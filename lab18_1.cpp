@@ -20,11 +20,11 @@ int main(){
 	for(int i=0; i < nB; i++) cin >> B[i];
 	
 	C = new int;
-	for(int i=0; i < nA; i++) C[i] = new int;
+	for(int i=0; i < nA; i++) C = new int[i];
 	
 	for(int i=0; i < nA; i++){
 		for(int j=0; j < nB; j++) {
-			C = A[i]*B[j];
+			C[i] = A[i]*B[j];
 		}
 	}
 	
@@ -37,11 +37,10 @@ int main(){
 	for(int i=0; i < nA; i++){
 		cout << A[i] << "\t";
 		for(int j=0; j < nB; j++) {
-			cout << C[i][j] << "\t";
+			cout << C[i] << "\t";
 		}
 		cout << "\n";
 	}
-     delete A,B,C; 
 
 	return 0;
 }
